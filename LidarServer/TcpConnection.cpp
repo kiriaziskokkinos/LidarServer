@@ -13,7 +13,7 @@
 
 #include "TcpConnection.h"
 
-TcpConnection::TcpConnection() {
+TcpConnection::TcpConnection() : Connection(){
 }
 
 TcpConnection::TcpConnection(const TcpConnection& orig) {

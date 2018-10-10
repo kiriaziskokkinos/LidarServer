@@ -23,9 +23,9 @@ using namespace std;
 
 int main(int argc, char** argv) {
 
-    t::Logger a;
+    Logger a;
 	ConnectionManager cm;
-        a.addLog("~~~~~ STARTING SERVER ~~~~~");
+    a.addLog("~~~~~ STARTING SERVER ~~~~~");
 	
 	
 	//thread ConnManThread(&worker,&cm);

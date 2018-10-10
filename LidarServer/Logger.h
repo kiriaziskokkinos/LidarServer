@@ -17,10 +17,10 @@
 #include <ctime>    
 #include <iostream>
 #include <fstream>
-namespace t 
-{
-    using namespace std;
+using namespace std;
+    
     class Logger {
+        
     public:
         Logger();
         Logger(string fp);
@@ -33,6 +33,5 @@ namespace t
         std::string filePath;
         std::fstream file;
     };
-}
 #endif /* LOGGER_H */
 

@@ -14,7 +14,7 @@
 #include "Logger.h"
 #include <string.h>
 
-t::Logger::Logger() {
+Logger::Logger() {
     std::string filepath ("Log.txt");
     file.open(filepath,  std::fstream::in | std::fstream::out | std::fstream::app);
     if (!file.is_open())
@@ -26,7 +26,7 @@ t::Logger::Logger() {
     
 }
 
-t::Logger::Logger(std::string fp) {
+Logger::Logger(std::string fp) {
     std::string filepath (fp);
     file.open(filepath, std::fstream::in | std::fstream::out | std::fstream::app);
     if (!file.is_open())
@@ -37,14 +37,14 @@ t::Logger::Logger(std::string fp) {
 }
 
 
-t::Logger::Logger(const Logger& orig) {
+Logger::Logger(const Logger& orig) {
 }
 
-t::Logger::~Logger() {
+Logger::~Logger() {
     this->file.close();
 }
 
-void t::Logger::addLog(std::string log){
+void Logger::addLog(std::string log){
     this->result = time(NULL);
     char* now;
     char later[19];

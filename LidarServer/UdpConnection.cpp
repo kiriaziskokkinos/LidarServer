@@ -13,7 +13,8 @@
 
 #include "UdpConnection.h"
 
-UdpConnection::UdpConnection() {
+UdpConnection::UdpConnection() :Connection() {
+	
 }
 
 UdpConnection::UdpConnection(const UdpConnection& orig) {

@@ -4,3 +4,4 @@ Thu Oct 11 00:30:39 2018test
 Thu Oct 11 00:30:50 2018test
 Thu Oct 11 00:32:26 2018 - test
 Thu Oct 11 00:32:39 2018 : test
+Thu Oct 11 00:37:29 2018 : ~~~~~ STARTING SERVER ~~~~~
