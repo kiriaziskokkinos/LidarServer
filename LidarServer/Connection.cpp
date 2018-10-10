@@ -30,15 +30,19 @@ Connection::~Connection() {
 }
 
 void Connection::singleConnectionThread(){
+	this->receiveMessage(1000);
+	
 	
 }
 
-void Connection::sendMessage(){
-	
+void Connection::sendMessage(std::string s){
+	write(this->descriptor,&s,sizeof(s));
 }
 
-void Connection::receiveMessage(){
-
+void Connection::receiveMessage(int count){
+	char* messagebuffer;
+	read(this->descriptor, messagebuffer, count );
+	std::cout<<"Client send: "<<messagebuffer<<std::endl;
 }
 
 

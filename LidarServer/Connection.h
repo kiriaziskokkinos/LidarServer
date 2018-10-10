@@ -15,6 +15,8 @@
 #define CONNECTION_H
 #include <netinet/in.h>
 #include <unistd.h>
+#include <iostream>
+#include <string>
 #include <sys/socket.h>
 #include <stdio.h>
 #include <thread>
@@ -28,8 +30,8 @@ public:
     Connection(const Connection& orig);
     virtual ~Connection();
     void singleConnectionThread();
-    void sendMessage();
-    void receiveMessage();
+    void sendMessage(std::string s);
+    void receiveMessage(int count);
 private:
     int descriptor;
     
