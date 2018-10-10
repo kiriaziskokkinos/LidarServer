@@ -27,6 +27,9 @@ public:
     Connection(int fd);
     Connection(const Connection& orig);
     virtual ~Connection();
+    void singleConnectionThread();
+    void sendMessage();
+    void receiveMessage();
 private:
     int descriptor;
     

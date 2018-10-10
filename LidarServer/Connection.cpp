@@ -19,12 +19,26 @@ Connection::Connection() {
 }
 Connection::Connection(int fd) {
 	this->descriptor = fd;
+	std::thread{&Connection::singleConnectionThread,this};
+
 }
 
 Connection::Connection(const Connection& orig) {
 }
 
 Connection::~Connection() {
+}
+
+void Connection::singleConnectionThread(){
+	
+}
+
+void Connection::sendMessage(){
+	
+}
+
+void Connection::receiveMessage(){
+
 }
 
 

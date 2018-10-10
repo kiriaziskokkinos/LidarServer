@@ -15,7 +15,7 @@
 #define UDPCONNECTION_H
 #include "Connection.h"
 
-class UdpConnection : Connection{
+class UdpConnection : public Connection{
 public:
     UdpConnection();
     UdpConnection(const UdpConnection& orig);

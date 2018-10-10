@@ -39,7 +39,7 @@ private:
     struct sockaddr_in sock;
     int socket_descriptor;
     std::thread acceptor;
-    int PORT = 5555;
+    int PORT = 11111;
     void ipInfo();
 };
 
