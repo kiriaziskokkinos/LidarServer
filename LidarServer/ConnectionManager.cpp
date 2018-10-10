@@ -19,6 +19,7 @@
 #include <netinet/in.h> 
 #include <string.h> 
 #include <iostream>
+#include <memory>
 #include <stdio.h>
 #include <errno.h>
 #include <stdio_ext.h>
@@ -35,7 +36,7 @@
 #include <signal.h>
 #include <time.h>
 #include <ctime>
-
+using namespace std;
 void ConnectionManager::ipInfo()
 {
 	struct ifaddrs *ifaddr, *ifa;
@@ -77,20 +78,35 @@ void ConnectionManager::ipInfo()
 
 ConnectionManager::ConnectionManager() 
 {
-	this->socket_descriptor = socket(AF_INET, SOCK_STREAM, 0);
-	if (this->socket_descriptor == -1) { 
-		std::cout<<"Error with socket "<<this->socket_descriptor;
+    /*  
+     *  Here we initialize the tcp socket struct as we need it for the initial communitation with the clients. 
+     */
+    	socket_struct.sin_addr.s_addr = htons(INADDR_ANY);
+	socket_struct.sin_family = AF_INET;
+	socket_struct.sin_port = htons(PORT);
+        
+    /*
+     *  We then create our socket descriptor which we will need to manage the socket. 
+     */    
+        
+	socket_descriptor = socket(AF_INET, SOCK_STREAM, 0);
+	if (socket_descriptor == -1) { 
+		std::cout<<"Error with socket "<<socket_descriptor;
 	}
-	this->sock.sin_addr.s_addr = htons(INADDR_ANY);
-	this->sock.sin_family = AF_INET;
-	this->sock.sin_port = htons(PORT); 
-	if ( bind(this->socket_descriptor,(struct sockaddr *) &this->sock,sizeof(this->sock)) == -1 )
+
+    /* 
+     *  What remains is to bind our socket and put it in a listening state.   
+     */
+	if ( bind(socket_descriptor,(struct sockaddr *) &socket_struct,sizeof(socket_struct)) == -1 )
 		std::cout<<"Error at bind";
-	if ( listen(this->socket_descriptor, 256) == -1 )
+        
+	if ( listen(socket_descriptor, 256) == -1 )
 		std::cout<<"Error at listen";
-	this->ipInfo();
-	this->acceptor= std::thread{&ConnectionManager::acceptConnectionsLoop,this};
-			
+    /*  
+     *  Our acceptor thread will be the one that will start accepting new connections.
+     *  We accept the connections on a separate thread since accept() will be called in blocking mode.
+     */
+	acceptor= std::thread{&ConnectionManager::acceptConnectionsLoop,this};			
 }
 
 
@@ -107,21 +123,35 @@ ConnectionManager::~ConnectionManager()
     this->acceptor.join();
 }
 
-
+/*
+ * @Success returns the file descriptor of a new connection.
+ * @Fail returns -1.
+ */
 int ConnectionManager::acceptConnection(){
-	int a;
-	socklen_t peer_size=sizeof(struct sockaddr_in);
-	if ((a = accept(socket_descriptor, (struct sockaddr *) &this->sock,&peer_size)) == -1 ) {
-		std::cout<<"Error";
-	}
-	std::cout<<"Client Connected"<<std::endl;
-	return a;
+    
+    
+    int connection_descriptor;
+    socklen_t peer_size=sizeof(struct sockaddr_in);
+    connection_descriptor = accept(socket_descriptor, (struct sockaddr *) &socket_struct,&peer_size);  
+    return connection_descriptor;
 }
 
+
+/*
+ * This function is run infinitely so as to always accept new connections.
+ * 
+ */
 void ConnectionManager::acceptConnectionsLoop() {
-	
-	while (true){
-		Connection tmp(this->acceptConnection());
-	}
+    int fd ;
+    while (true){
+        fd = acceptConnection();
+        if ( fd == -1 ){
+            cout<<"An error occured while trying to accept a new connection."<<endl;  
+            continue;
+        }
+        else {
+            connection_list.emplace_back(make_unique<Connection>(fd));
+        }
+    }
 }
 

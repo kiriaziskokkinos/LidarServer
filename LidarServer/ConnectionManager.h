@@ -27,16 +27,11 @@ public:
     ConnectionManager();
     ConnectionManager(const ConnectionManager& orig);
     virtual ~ConnectionManager();
-    /**
-     * Returns the file descriptor of the new connection
-     * If no file descriptor is creted the returns -1
-     * @return file descriptor or -1 if fails
-     */
     int acceptConnection();
     void acceptConnectionsLoop();
 private:
     std::vector<std::unique_ptr<Connection> > connection_list;
-    struct sockaddr_in sock;
+    struct sockaddr_in socket_struct;
     int socket_descriptor;
     std::thread acceptor;
     int PORT = 11111;
