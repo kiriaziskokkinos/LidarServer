@@ -20,6 +20,8 @@
 #include <sys/socket.h>
 #include <stdio.h>
 #include <thread>
+#include <vector>
+#include "SimpleMessage.h"
 
 
 class Connection {
@@ -33,8 +35,10 @@ public:
     void sendMessage(std::string s);
     void receiveMessage(int count);
 private:
+    std::thread runner;
+    std::vector <Message> MessageList;
+protected:
     int descriptor;
-    
 };
 
 #endif /* CONNECTION_H */

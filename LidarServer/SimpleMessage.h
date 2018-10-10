@@ -14,13 +14,18 @@
 #ifndef SIMPLEMESSAGE_H
 #define SIMPLEMESSAGE_H
 #include "Message.h"
+#include <iostream>
+#include <string>
+
+
 class SimpleMessage : public Message {
 public:
     SimpleMessage();
+    SimpleMessage(std::string s);
     SimpleMessage(const SimpleMessage& orig);
     virtual ~SimpleMessage();
 private:
-
+    
 };
 
 #endif /* SIMPLEMESSAGE_H */

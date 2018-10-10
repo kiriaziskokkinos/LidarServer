@@ -13,6 +13,8 @@
 
 #ifndef MESSAGE_H
 #define MESSAGE_H
+#include <iostream>
+#include <string>
 
 class Message {
 public:
@@ -21,6 +23,8 @@ public:
     virtual ~Message();
 private:
 
+protected:
+    std::string message;
 };
 
 #endif /* MESSAGE_H */
