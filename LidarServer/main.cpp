@@ -13,7 +13,6 @@
 
 #include <cstdlib>
 #include "ConnectionManager.h"
-
 #include "Logger.h"
 #include <thread>
 using namespace std;
@@ -26,6 +25,7 @@ int main(int argc, char** argv) {
 
     t::Logger a;
 	ConnectionManager cm;
+        a.addLog("~~~~~ STARTING SERVER ~~~~~");
 	
 	
 	//thread ConnManThread(&worker,&cm);

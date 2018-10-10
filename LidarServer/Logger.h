@@ -14,6 +14,7 @@
 #ifndef LOGGER_H
 #define LOGGER_H
 #include <string>
+#include <ctime>    
 #include <iostream>
 #include <fstream>
 namespace t 
@@ -22,13 +23,15 @@ namespace t
     class Logger {
     public:
         Logger();
+        Logger(string fp);
         Logger(const Logger& orig);
         virtual ~Logger();
         void addLog(std::string log);
 
     private:
+        std::time_t result;
         std::string filePath;
-        std::ofstream file;
+        std::fstream file;
     };
 }
 #endif /* LOGGER_H */

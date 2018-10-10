@@ -12,11 +12,30 @@
  */
 
 #include "Logger.h"
+#include <string.h>
 
 t::Logger::Logger() {
-    this->file.open("Log.txt");
+    std::string filepath ("Log.txt");
+    file.open(filepath,  std::fstream::in | std::fstream::out | std::fstream::app);
+    if (!file.is_open())
+    {
+        std::perror("File opening failed");
+    }   
+    result = std::time(nullptr);
+    
     
 }
+
+t::Logger::Logger(std::string fp) {
+    std::string filepath (fp);
+    file.open(filepath, std::fstream::in | std::fstream::out | std::fstream::app);
+    if (!file.is_open())
+    {
+        std::perror("File opening failed");
+    }
+    result = std::time(nullptr);
+}
+
 
 t::Logger::Logger(const Logger& orig) {
 }
@@ -26,6 +45,11 @@ t::Logger::~Logger() {
 }
 
 void t::Logger::addLog(std::string log){
-    file << log;
-    
+    this->result = time(NULL);
+    char* now;
+    char later[19];
+    now = ctime(&result);
+    strncpy( later, now, strlen(now) - 1 );
+    file << later << " : " << log << std::endl;
+    file.flush();
 }
