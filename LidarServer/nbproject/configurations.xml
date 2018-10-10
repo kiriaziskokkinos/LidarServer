@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="97">
+<configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
@@ -61,7 +61,7 @@
       </toolsSet>
       <compileType>
         <ccTool>
-          <commandLine>-std=c++11 -pthread</commandLine>
+          <commandLine>-std=c++14 -pthread</commandLine>
         </ccTool>
       </compileType>
       <item path="Client.cpp" ex="false" tool="1" flavor2="0">

@@ -100,7 +100,7 @@ ConnectionManager::ConnectionManager()
 	if ( bind(socket_descriptor,(struct sockaddr *) &socket_struct,sizeof(socket_struct)) == -1 )
 		std::cout<<"Error at bind";
         
-	if ( listen(socket_descriptor, 256) == -1 )
+	if ( listen(socket_descriptor, 250) == -1 )
 		std::cout<<"Error at listen";
     /*  
      *  Our acceptor thread will be the one that will start accepting new connections.
@@ -150,7 +150,9 @@ void ConnectionManager::acceptConnectionsLoop() {
             continue;
         }
         else {
+            cout<<"Accepted new connection."<<endl;
             connection_list.emplace_back(make_unique<Connection>(fd));
+            //cout<<"Accepted new connection."<<endl;
         }
     }
 }
