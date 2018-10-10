@@ -4,6 +4,17 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>Client.h</itemPath>
+      <itemPath>Connection.h</itemPath>
+      <itemPath>ConnectionManager.h</itemPath>
+      <itemPath>LidarConnection.h</itemPath>
+      <itemPath>LidarMessage.h</itemPath>
+      <itemPath>Logger.h</itemPath>
+      <itemPath>Message.h</itemPath>
+      <itemPath>SimpleMessage.h</itemPath>
+      <itemPath>TcpConnection.h</itemPath>
+      <itemPath>UIConnection.h</itemPath>
+      <itemPath>UdpConnection.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -12,6 +23,17 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>Client.cpp</itemPath>
+      <itemPath>Connection.cpp</itemPath>
+      <itemPath>ConnectionManager.cpp</itemPath>
+      <itemPath>LidarConnection.cpp</itemPath>
+      <itemPath>LidarMessage.cpp</itemPath>
+      <itemPath>Logger.cpp</itemPath>
+      <itemPath>Message.cpp</itemPath>
+      <itemPath>SimpleMessage.cpp</itemPath>
+      <itemPath>TcpConnection.cpp</itemPath>
+      <itemPath>UIConnection.cpp</itemPath>
+      <itemPath>UdpConnection.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -26,6 +48,9 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Debug" type="1">
@@ -35,7 +60,54 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <commandLine>-std=c++11 -pthread</commandLine>
+        </ccTool>
       </compileType>
+      <item path="Client.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Client.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Connection.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Connection.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ConnectionManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ConnectionManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="LidarConnection.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="LidarConnection.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="LidarMessage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="LidarMessage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Logger.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Logger.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Message.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Message.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SimpleMessage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SimpleMessage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TcpConnection.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TcpConnection.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="UIConnection.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="UIConnection.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="UdpConnection.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="UdpConnection.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -59,6 +131,50 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Client.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Client.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Connection.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Connection.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ConnectionManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ConnectionManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="LidarConnection.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="LidarConnection.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="LidarMessage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="LidarMessage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Logger.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Logger.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Message.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Message.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SimpleMessage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SimpleMessage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TcpConnection.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TcpConnection.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="UIConnection.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="UIConnection.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="UdpConnection.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="UdpConnection.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>

@@ -8,18 +8,28 @@
  * File:   main.cpp
  * Author: kiriazis
  *
- * Created on October 10, 2018, 9:05 PM
+ * Created on September 28, 2018, 10:08 PM
  */
 
 #include <cstdlib>
+#include "ConnectionManager.h"
 
+#include "Logger.h"
+#include <thread>
 using namespace std;
 
-/*
- * 
- */
+/*void worker(ConnectionManager& cm){
+	cm->acceptConnectionsLoop();
+}*/
+
 int main(int argc, char** argv) {
 
-	return 0;
+    t::Logger a;
+	ConnectionManager cm;
+	
+	
+	//thread ConnManThread(&worker,&cm);
+	//std::cout<<"Waiting for Connection Manager\n";
+	
+    return 0;
 }
-
