@@ -12,6 +12,7 @@
  */
 
 #include "Connection.h"
+#include "UdpConnection.h"
 
 Connection::Connection() {
     
@@ -32,9 +33,13 @@ Connection::~Connection() {
 
 void Connection::singleConnectionThread(){
 	this->receiveMessage(1000);
+        int udpFileDescriptor;
 	while(true){
 		switch(5) {
-			case 1 : std::cout << '1';
+			case 1 : {
+                            UdpConnection udpConn;
+                            udpFileDescriptor = udpConn.udpAccept();
+                        }
 			case 2 : std::cout << '2';
 		}
 	

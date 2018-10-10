@@ -20,8 +20,12 @@ public:
     UdpConnection();
     UdpConnection(const UdpConnection& orig);
     virtual ~UdpConnection();
+    int udpAccept();
 private:
-
+    int socket_descriptor;
+    struct sockaddr_in socket_struct;
+    int PORT = 22222;
+    int fd;
 };
 
 #endif /* UDPCONNECTION_H */
