@@ -19,6 +19,7 @@
 #include <netinet/in.h> 
 #include <string.h> 
 #include <iostream>
+#include <memory>
 #include <stdio.h>
 #include <errno.h>
 #include <stdio_ext.h>
@@ -35,7 +36,7 @@
 #include <signal.h>
 #include <time.h>
 #include <ctime>
-
+using namespace std;
 void ConnectionManager::ipInfo()
 {
 	struct ifaddrs *ifaddr, *ifa;
@@ -127,15 +128,11 @@ ConnectionManager::~ConnectionManager()
  * @Fail returns -1.
  */
 int ConnectionManager::acceptConnection(){
-    using namespace std;
+    
     
     int connection_descriptor;
     socklen_t peer_size=sizeof(struct sockaddr_in);
     connection_descriptor = accept(socket_descriptor, (struct sockaddr *) &socket_struct,&peer_size);  
-    if (connection_descriptor == -1 ) {
-        cout<<"Error accepting new connection.";
-    }
-    else cout<<"Client Connected"<<std::endl;
     return connection_descriptor;
 }
 
@@ -144,11 +141,17 @@ int ConnectionManager::acceptConnection(){
  * This function is run infinitely so as to always accept new connections.
  * 
  */
-
 void ConnectionManager::acceptConnectionsLoop() {
-	
-	while (true){
-		Connection tmp(this->acceptConnection());
-	}
+    int fd ;
+    while (true){
+        fd = acceptConnection();
+        if ( fd == -1 ){
+            cout<<"An error occured while trying to accept a new connection."<<endl;  
+            continue;
+        }
+        else {
+            connection_list.emplace_back(make_unique<Connection>(fd));
+        }
+    }
 }
 
