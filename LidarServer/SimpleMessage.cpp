@@ -14,6 +14,11 @@
 #include "SimpleMessage.h"
 
 SimpleMessage::SimpleMessage() {
+	this->message = "";
+}
+
+SimpleMessage::SimpleMessage(std::string s){
+	this->message = s;
 }
 
 SimpleMessage::SimpleMessage(const SimpleMessage& orig) {
