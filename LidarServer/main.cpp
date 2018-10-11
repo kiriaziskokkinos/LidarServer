@@ -12,7 +12,7 @@
  */
 
 #include <cstdlib>
-#include "ConnectionManager.h"
+//#include "ConnectionManager.h"
 #include "Logger.h"
 #include <thread>
 using namespace std;
@@ -23,9 +23,10 @@ using namespace std;
 
 int main(int argc, char** argv) {
 
-    Logger a;
-    ConnectionManager cm;
-    a.addLog("~~~~~ STARTING SERVER ~~~~~");
+    
+    //ConnectionManager cm;
+    Logger::initLogger();
+    Logger::addLog("~~~~~ STARTING SERVER ~~~~~");
     cout<<"Server Start\n";
 	
 	

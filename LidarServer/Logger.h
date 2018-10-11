@@ -7,7 +7,7 @@
 /* 
  * File:   Logger.h
  * Author: kiriazis
- *
+ * 
  * Created on September 30, 2018, 6:46 PM
  */
 
@@ -17,21 +17,31 @@
 #include <ctime>    
 #include <iostream>
 #include <fstream>
-using namespace std;
-    
-    class Logger {
-        
-    public:
-        Logger();
-        Logger(string fp);
-        Logger(const Logger& orig);
-        virtual ~Logger();
-        void addLog(std::string log);
+#include <mutex>
+#include <memory>
 
+/*
+ * This class implements the Singleton Design Pattern.
+ * Logger is resonsible for loggin important. Every class should include this header and use static method of Class Logger
+
+ */    
+    class Logger { 
+    public:
+        static void addLog(std::string log);
+        /*
+         * initLogger should be called once. In case of a second call the method will just return 
+         */
+        static void initLogger();
+        static void initLogger(std::string& filename);
     private:
-        std::time_t result;
-        std::string filePath;
-        std::fstream file;
+        Logger(){}; //must be left empty
+        //Logger(string fp){};
+        Logger(const Logger& orig){}; //must be left empty
+        ~Logger() {}; //must be left empty
+        static std::time_t result;
+        static std::string file_path;
+        static std::fstream file;
+        static std::mutex filelock;
     };
 #endif /* LOGGER_H */
 
