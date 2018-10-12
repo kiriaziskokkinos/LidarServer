@@ -32,19 +32,31 @@ Connection::~Connection() {
 }
 
 void Connection::singleConnectionThread(){
-	this->receiveMessage(1000);
-        int udpFileDescriptor;
+	std::string ans = this->receiveMessage(50);
+	int asnInt = std::stoi(ans,nullptr,0);
+    int udpFileDescriptor;
 	while(true){
-		switch(5) {
+		switch(asnInt) {
 			case 1 : {
-                            UdpConnection udpConn;
-                            udpFileDescriptor = udpConn.udpAccept();
-                        }
-			case 2 : std::cout << '2';
+                UdpConnection udpConn;
+                udpFileDescriptor = udpConn.udpAccept();
+            }
+			case 2 : {
+				std::cout << '2';
+			}
+			case 3 : {
+				break;
+			}
+			case 0 : {
+				break;
+			}
+			default : {
+				sleep(400);
+			}
 		}
 	
 	}
-	
+	close(this->descriptor);
 	
 }
 /*
@@ -55,22 +67,24 @@ void Connection::sendMessage(std::string s){
 	int i = write(this->descriptor,&s,sizeof(s));
 	if(i == -1){
 		std::cout<<"Error sending\n";
+		Logger::addLog("Error while sending message");
 		close(this->descriptor);
 	}
+	
 }
 
-void Connection::receiveMessage(int count){
+char* Connection::receiveMessage(int count){
 	char* messagebuffer;
 	int j = read(this->descriptor, messagebuffer, count );
 	if(j == -1){
+		Logger::addLog("Error while receiving Message");
 		std::cout<<"Error receiving\n";
 		close(this->descriptor);
 	}
 	std::cout<<"Client send: "<<messagebuffer<<std::endl;
 	SimpleMessage tempmsg(messagebuffer);
 	this->MessageList.push_back(tempmsg);
-	
-	
+	return messagebuffer;
 }
 
 

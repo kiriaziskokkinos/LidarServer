@@ -21,6 +21,7 @@
 #include <stdio.h>
 #include <thread>
 #include <vector>
+#include "Logger.h"
 #include "SimpleMessage.h"
 
 
@@ -33,7 +34,7 @@ public:
     virtual ~Connection();
     void singleConnectionThread();
     void sendMessage(std::string s);
-    void receiveMessage(int count);
+    char* receiveMessage(int count);
 private:
     std::thread runner;
     std::vector <Message> MessageList;
