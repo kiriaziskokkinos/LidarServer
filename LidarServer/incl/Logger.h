@@ -18,6 +18,7 @@
 #include <iostream>
 #include <fstream>
 #include <mutex>
+#include <cstring>
 #include <memory>
 
 /*
