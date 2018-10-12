@@ -6,6 +6,20 @@
     </data>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/home/kiriazis/NetBeansProjects1/LidarServer/LidarServer/Message.h</file>
+            <file>file:/home/kiriazis/NetBeansProjects1/LidarServer/LidarServer/UdpConnection.h</file>
+            <file>file:/home/kiriazis/NetBeansProjects1/LidarServer/LidarServer/Logger.cpp</file>
+            <file>file:/home/kiriazis/NetBeansProjects1/LidarServer/LidarServer/Connection.h</file>
+            <file>file:/home/kiriazis/NetBeansProjects1/LidarServer/LidarServer/TcpConnection.cpp</file>
+            <file>file:/home/kiriazis/NetBeansProjects1/LidarServer/LidarServer/UdpConnection.cpp</file>
+            <file>file:/home/kiriazis/NetBeansProjects1/LidarServer/LidarServer/Connection.cpp</file>
+            <file>file:/home/kiriazis/NetBeansProjects1/LidarServer/LidarServer/Message.cpp</file>
+            <file>file:/home/kiriazis/NetBeansProjects1/LidarServer/LidarServer/SimpleMessage.cpp</file>
+            <file>file:/home/kiriazis/NetBeansProjects1/LidarServer/LidarServer/main.cpp</file>
+            <file>file:/home/kiriazis/NetBeansProjects1/LidarServer/LidarServer/Logger.h</file>
+            <file>file:/home/kiriazis/NetBeansProjects1/LidarServer/LidarServer/TcpConnection.h</file>
+            <file>file:/home/kiriazis/NetBeansProjects1/LidarServer/LidarServer/SimpleMessage.h</file>
+        </group>
     </open-files>
 </project-private>

@@ -35,18 +35,18 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/Client.o \
-	${OBJECTDIR}/Connection.o \
-	${OBJECTDIR}/ConnectionManager.o \
-	${OBJECTDIR}/LidarConnection.o \
-	${OBJECTDIR}/LidarMessage.o \
-	${OBJECTDIR}/Logger.o \
-	${OBJECTDIR}/Message.o \
-	${OBJECTDIR}/SimpleMessage.o \
-	${OBJECTDIR}/TcpConnection.o \
-	${OBJECTDIR}/UIConnection.o \
-	${OBJECTDIR}/UdpConnection.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/src/Client.o \
+	${OBJECTDIR}/src/Connection.o \
+	${OBJECTDIR}/src/ConnectionManager.o \
+	${OBJECTDIR}/src/LidarConnection.o \
+	${OBJECTDIR}/src/LidarMessage.o \
+	${OBJECTDIR}/src/Logger.o \
+	${OBJECTDIR}/src/Message.o \
+	${OBJECTDIR}/src/SimpleMessage.o \
+	${OBJECTDIR}/src/TcpConnection.o \
+	${OBJECTDIR}/src/UIConnection.o \
+	${OBJECTDIR}/src/UdpConnection.o \
+	${OBJECTDIR}/src/main.o
 
 
 # C Compiler Flags
@@ -73,65 +73,65 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lidarserver: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lidarserver ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/Client.o: Client.cpp
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/Client.o: src/Client.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Client.o Client.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Client.o src/Client.cpp
 
-${OBJECTDIR}/Connection.o: Connection.cpp
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/Connection.o: src/Connection.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Connection.o Connection.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Connection.o src/Connection.cpp
 
-${OBJECTDIR}/ConnectionManager.o: ConnectionManager.cpp
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/ConnectionManager.o: src/ConnectionManager.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ConnectionManager.o ConnectionManager.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ConnectionManager.o src/ConnectionManager.cpp
 
-${OBJECTDIR}/LidarConnection.o: LidarConnection.cpp
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/LidarConnection.o: src/LidarConnection.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/LidarConnection.o LidarConnection.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/LidarConnection.o src/LidarConnection.cpp
 
-${OBJECTDIR}/LidarMessage.o: LidarMessage.cpp
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/LidarMessage.o: src/LidarMessage.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/LidarMessage.o LidarMessage.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/LidarMessage.o src/LidarMessage.cpp
 
-${OBJECTDIR}/Logger.o: Logger.cpp
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/Logger.o: src/Logger.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Logger.o Logger.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Logger.o src/Logger.cpp
 
-${OBJECTDIR}/Message.o: Message.cpp
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/Message.o: src/Message.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Message.o Message.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Message.o src/Message.cpp
 
-${OBJECTDIR}/SimpleMessage.o: SimpleMessage.cpp
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/SimpleMessage.o: src/SimpleMessage.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/SimpleMessage.o SimpleMessage.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/SimpleMessage.o src/SimpleMessage.cpp
 
-${OBJECTDIR}/TcpConnection.o: TcpConnection.cpp
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/TcpConnection.o: src/TcpConnection.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TcpConnection.o TcpConnection.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TcpConnection.o src/TcpConnection.cpp
 
-${OBJECTDIR}/UIConnection.o: UIConnection.cpp
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/UIConnection.o: src/UIConnection.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/UIConnection.o UIConnection.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/UIConnection.o src/UIConnection.cpp
 
-${OBJECTDIR}/UdpConnection.o: UdpConnection.cpp
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/UdpConnection.o: src/UdpConnection.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/UdpConnection.o UdpConnection.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/UdpConnection.o src/UdpConnection.cpp
 
-${OBJECTDIR}/main.o: main.cpp
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/main.o: src/main.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
 
 # Subprojects
 .build-subprojects:
