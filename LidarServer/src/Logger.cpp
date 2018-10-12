@@ -12,52 +12,18 @@
  */
 
 #include "Logger.h"
-#include <string.h>
-#include <exception>
-/*
-Logger::Logger() {
-    std::string filepath ("Log.txt");
-    file.open(filepath,  std::fstream::in | std::fstream::out | std::fstream::app);
-    if (!file.is_open())
-    {
-        std::perror("File opening failed");
-    }   
-    result = std::time(nullptr);
-    
-    
-}
-
-Logger::Logger(std::string fp) {
-    std::string filepath (fp);
-    file.open(filepath, std::fstream::in | std::fstream::out | std::fstream::app);
-    if (!file.is_open())
-    {
-        std::perror("File opening failed");
-    }
-    result = std::time(nullptr);
-}
-
-
-Logger::Logger(const Logger& orig) {
-}
-
-Logger::~Logger() {
-    this->file.close();
-}
-*/
 
 //static member of class Logger
 // ~~~
 std::mutex Logger::filelock;
 std::fstream Logger::file;
 std::string Logger::file_path ="";
-std::time_t Logger::result;
 // ~~~
 
 
     void Logger::initLogger()
     {
-        if (Logger::file_path != "")
+        if (Logger::file_path == "")
         {
             Logger::file_path="Log.txt";
             Logger::file.open(file_path,  std::fstream::in | std::fstream::out | std::fstream::app);
@@ -65,7 +31,6 @@ std::time_t Logger::result;
             {
                 std::perror("File opening failed");
             }   
-            Logger::result = std::time(nullptr);    
         }
         else
         {
@@ -75,7 +40,7 @@ std::time_t Logger::result;
 
     void Logger::initLogger(std::string& filename)
     {
-        if (Logger::file_path != "")
+        if (Logger::file_path == "")
         {
             Logger::file_path=filename;
             Logger::file.open(file_path,  std::fstream::in | std::fstream::out | std::fstream::app);
@@ -83,7 +48,6 @@ std::time_t Logger::result;
             {
                 std::perror("File opening failed");
             }   
-            Logger::result = std::time(nullptr);    
         }
         else
         {
@@ -93,12 +57,17 @@ std::time_t Logger::result;
 
 void Logger::addLog(std::string log){
     Logger::filelock.lock();
-        Logger::result = time(NULL);
+    //if (Logger::file_path=="") { Logger::initLogger();}
+        time_t result = time(0);
         char* now;
-        char later[19];
-        now = ctime(&result);
-        strncpy( later, now, strlen(now) - 1 );
-        Logger::file << later << " : " << log << std::endl;
+
+        now = ctime(&result);    
+        now[strlen(now)-1] = '\0';     
+#ifdef DEBUG
+        std::cout<<"Debug Message: print time now {"<<now<<"}"
+            <<std::endl;
+#endif        
+        Logger::file << now << " : " << log << std::endl;
         Logger::file.flush();
     Logger::filelock.unlock();
 }
