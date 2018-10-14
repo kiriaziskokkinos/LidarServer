@@ -15,26 +15,20 @@
 
 UdpConnection::UdpConnection() {
     
-    /*  
-     *  Here we initialize the udp socket struct as we need it for the initial communitation with the clients. 
-     */
-    socket_struct.sin_addr.s_addr = htons(INADDR_ANY);
-	socket_struct.sin_family = AF_INET;
-	socket_struct.sin_port = htons(PORT);
+  	//socket_struct.sin_addr.s_addr = htons(INADDR_ANY);
+	//socket_struct.sin_family = AF_INET;
+	//socket_struct.sin_port = htons(PORT);
+ 
         
-    /*
-     *  We then create our socket descriptor which we will need to manage the socket. 
-     */    
-        
-	socket_descriptor = socket(AF_INET, SOCK_DGRAM, 0);
-	if (socket_descriptor == -1) {
-		std::cout<<"Error with socket "<<socket_descriptor;
-		Logger::addLog("Error with socket at udp socket");
-	}
+	//socket_descriptor = socket(AF_INET, SOCK_DGRAM, 0);
+	//if (socket_descriptor == -1) {
+		//std::cout<<"Error with socket "<<socket_descriptor;
+		//Logger::addLog("Error with socket at udp socket");
+	//}
 
     /* 
      *  What remains is to bind our socket and put it in a listening state.   
-     */
+     * /
 	if ( bind(socket_descriptor,(struct sockaddr *) &socket_struct,sizeof(socket_struct)) == -1 ){
 		std::cout<<"Error at bind";
 		Logger::addLog("Error at bind at udp connection");
@@ -45,26 +39,28 @@ UdpConnection::UdpConnection() {
 		Logger::addLog("Error at listen at udp connection");
 	}
         
-        
+    */
          
 	
 }
 
 UdpConnection::UdpConnection(const UdpConnection& orig) {
+	//copies the descriptors of the connection
 }
 
 UdpConnection::~UdpConnection() {
+	//closes the connection using close funtion
 }
 
+
 int UdpConnection::udpAccept(){
+	/*
     socklen_t peer_size=sizeof(struct sockaddr_in);
     this->fd = accept(socket_descriptor, (struct sockaddr *) &socket_struct,&peer_size); 
 	if(this->fd == -1){
 		std::cout<<"Error while accepting abort udp connection";
 		Logger::addLog("Error while accepting abort udp connection");
-	}
-	
-	
+	}	
     return this->fd;
+	*/
 }
-

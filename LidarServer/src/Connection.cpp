@@ -14,26 +14,26 @@
 #include "Connection.h"
 #include "UdpConnection.h"
 
-/*
-Connection::Connection() {
-    
- this->descriptor = 0;   
-}
-*/
+
+//Connection::Connection() {   
+// this->descriptor = 0;   
+//}
+
 Connection::Connection(int fd) {
-	this->descriptor = fd;
+	/*this->descriptor = fd;
 	this->runner = std::thread{&Connection::singleConnectionThread,this};
+	*/
 }
 
 Connection::Connection(const Connection& orig) {
 }
 
 Connection::~Connection() {
-	this->runner.join();
+	//this->runner.join();
 }
 
 void Connection::singleConnectionThread(){
-	std::string ans = this->receiveMessage(2);
+	/*std::string ans = this->receiveMessage(2);
 	int asn_int = std::stoi(ans,nullptr,10);
 
     int udpFileDescriptor;
@@ -59,24 +59,24 @@ void Connection::singleConnectionThread(){
 	
 	}
 	close(this->descriptor);
-	
+	*/
 }
 /*
  * Send message to client and check if there is a problem
  *
  */
 void Connection::sendMessage(std::string s){
-	int i = write(this->descriptor,&s,sizeof(s));
+	/*int i = write(this->descriptor,&s,sizeof(s));
 	if(i == -1){
 		std::cout<<"Error sending\n";
 		Logger::addLog("Error while sending message");
 		close(this->descriptor);
 	}
-	
+	*/
 }
 
-char* Connection::receiveMessage(int count){
-	char* messagebuffer;
+//char* Connection::receiveMessage(int count){
+	/*char* messagebuffer;
 	int j = read(this->descriptor, messagebuffer, count );
 	if(j == -1){
 		Logger::addLog("Error while receiving Message");
@@ -86,9 +86,9 @@ char* Connection::receiveMessage(int count){
 	std::cout<<"Client send: "<<messagebuffer<<std::endl;
 	SimpleMessage tempmsg(messagebuffer);
 	this->MessageList.push_back(tempmsg);
-	return messagebuffer;
-}
-
+	return messagebuffer;*/
+//	return std::nullptr;
+//}
 
 
 

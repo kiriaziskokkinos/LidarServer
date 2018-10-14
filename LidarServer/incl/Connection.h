@@ -17,12 +17,12 @@
 #include <thread>
 
 #include "SimpleMessage.h"
-
+#include "Socket.h"
 
 class Connection {
     
 public:
-    Connection() {};
+    Connection() { };
     Connection(int fd);
     Connection(const Connection& orig);
     virtual ~Connection();

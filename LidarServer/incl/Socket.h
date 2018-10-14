@@ -20,7 +20,7 @@
 
 
 /**
- * enum Type for distinguishing UDP and TCP socket.
+ * enum Type for distinguishing UDP and TCP socket types.
  * */
 enum Type { TCP=0, UDP=1};
 
@@ -30,12 +30,17 @@ enum Type { TCP=0, UDP=1};
  */
 class Socket {
     protected:
+        //additional data (IP,PORT) must be added here
+        //sockaddr int that Connection Manager uses must be saved here aswell
         int socket_descriptor;
         Type socket_type;
         virtual void sendData(std::string data) =0;
         virtual void receiveData() =0;
     public:
-        Socket(int descriptor);
+        Socket(int descriptor, Type t);
+        Socket(Socket& o);
+        ~Socket();
+
 };
 
 #endif

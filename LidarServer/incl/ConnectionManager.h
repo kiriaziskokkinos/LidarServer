@@ -29,6 +29,7 @@ public:
     virtual ~ConnectionManager();
     int acceptConnection();
     void acceptConnectionsLoop();
+    void closeServer() {/*To Be implemented in .cpp file*/};
 private:
     std::vector<std::unique_ptr<Connection> > connection_list;
     struct sockaddr_in socket_struct;

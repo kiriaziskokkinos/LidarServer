@@ -24,7 +24,7 @@ using namespace std;
 int main(int argc, char** argv) {
 
     
-    ConnectionManager cm;
+   // ConnectionManager cm;
     Logger::initLogger();
     Logger::addLog("~~~~~ STARTING SERVER ~~~~~");
     cout<<"Server Start\n";

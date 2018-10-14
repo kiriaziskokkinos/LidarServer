@@ -35,8 +35,8 @@ void Client::ConnectionLoop(){
 	if ( this->file_descriptor_udp == -1 ){
 		std::cout<<"Error";
 	}
-	Connection c1(this->file_descriptor_udp);
-	Connection c2(this->file_descriptor_tcp);
+	//Connection c1(this->file_descriptor_udp);
+	//Connection c2(this->file_descriptor_tcp);
 }
 
 Client::Client(const Client& orig) {
