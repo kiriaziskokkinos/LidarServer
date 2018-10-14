@@ -14,14 +14,15 @@
 #include "Connection.h"
 #include "UdpConnection.h"
 
+/*
 Connection::Connection() {
     
  this->descriptor = 0;   
 }
+*/
 Connection::Connection(int fd) {
 	this->descriptor = fd;
 	this->runner = std::thread{&Connection::singleConnectionThread,this};
-
 }
 
 Connection::Connection(const Connection& orig) {
@@ -32,11 +33,12 @@ Connection::~Connection() {
 }
 
 void Connection::singleConnectionThread(){
-	std::string ans = this->receiveMessage(50);
-	int asnInt = std::stoi(ans,nullptr,0);
+	std::string ans = this->receiveMessage(2);
+	int asn_int = std::stoi(ans,nullptr,10);
+
     int udpFileDescriptor;
 	while(true){
-		switch(asnInt) {
+		switch(asn_int) {
 			case 1 : {
                 UdpConnection udpConn;
                 udpFileDescriptor = udpConn.udpAccept();

@@ -13,33 +13,27 @@
 
 #ifndef CONNECTION_H
 #define CONNECTION_H
-#include <netinet/in.h>
-#include <unistd.h>
-#include <iostream>
-#include <string>
-#include <sys/socket.h>
-#include <stdio.h>
+
 #include <thread>
-#include <vector>
-#include "Logger.h"
+
 #include "SimpleMessage.h"
 
 
 class Connection {
     
 public:
-    Connection();
+    Connection() {};
     Connection(int fd);
     Connection(const Connection& orig);
     virtual ~Connection();
     void singleConnectionThread();
     void sendMessage(std::string s);
-    char* receiveMessage(int count);
-private:
-    std::thread runner;
-    std::vector <Message> MessageList;
 protected:
-    int descriptor;
+    std::thread runner;
+    //std::vector <Message> MessageList;
+    //int descriptor;
+    //void receiveMessage(int len);
+
 };
 
 #endif /* CONNECTION_H */
