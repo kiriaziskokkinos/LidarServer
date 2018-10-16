@@ -53,3 +53,8 @@ void ServerSocket::sendData(std::string data)
 {
 	
 }
+
+ServerSocket::~ServerSocket()
+{
+
+}

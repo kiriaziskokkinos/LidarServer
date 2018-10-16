@@ -13,10 +13,10 @@
 
 #include "LidarConnection.h"
 
-LidarConnection::LidarConnection() {
+LidarConnection::LidarConnection() :Connection() {
 }
-
-LidarConnection::LidarConnection(const LidarConnection& orig) {
+ 
+LidarConnection::LidarConnection(const LidarConnection& orig) :Connection() {
 }
 
 LidarConnection::~LidarConnection() {

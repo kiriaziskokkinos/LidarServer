@@ -24,8 +24,8 @@ public:
     void bindd();
     void listenn();
     int acceptt();
-    //void receiveData();
-    //void sendData(std::string data);
+    void receiveData();
+    void sendData(std::string data);
 private:
 
 };
