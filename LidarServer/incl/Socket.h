@@ -13,8 +13,26 @@
 #include <string>
 #include <sys/socket.h>
 #include <stdio.h>
-
 #include "Logger.h"
+#include <unistd.h> 
+#include <stdio.h> 
+#include <sys/socket.h> 
+#include <stdlib.h> 
+#include <netinet/in.h> 
+#include <memory>
+#include <stdio.h>
+#include <errno.h>
+#include <stdio_ext.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <sys/types.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <ifaddrs.h>
+#include <signal.h>
+#include <time.h>
+#include <ctime>
 //#include "SimpleMessage.h"
 //#include "LidarMessage.h"
 
@@ -22,7 +40,7 @@
 /**
  * enum Type for distinguishing UDP and TCP socket types.
  * */
-enum Type { TCP=0, UDP=1};
+enum Type{ TCP=0, UDP=1};
 
 /**
  * Pure abstract class implementing a socket.
@@ -34,12 +52,17 @@ class Socket {
         //sockaddr int that Connection Manager uses must be saved here aswell
         int socket_descriptor;
         Type socket_type;
+        struct sockaddr_in socket_struct;
         virtual void sendData(std::string data) =0;
         virtual void receiveData() =0;
+        int PORT = 11111;
+        void ipInfo();
     public:
+        Socket();
         Socket(int descriptor, Type t);
         Socket(Socket& o);
-        ~Socket();
+        virtual ~Socket();
+        void closed();
 
 };
 

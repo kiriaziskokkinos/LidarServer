@@ -27,16 +27,9 @@ public:
     ConnectionManager();
     ConnectionManager(const ConnectionManager& orig);
     virtual ~ConnectionManager();
-    int acceptConnection();
-    void acceptConnectionsLoop();
-    void closeServer() {/*To Be implemented in .cpp file*/};
 private:
     std::vector<std::unique_ptr<Connection> > connection_list;
-    struct sockaddr_in socket_struct;
-    int socket_descriptor;
     std::thread acceptor;
-    int PORT = 11111;
-    void ipInfo();
 };
 
 #endif /* CONNECTIONMANAGER_H */

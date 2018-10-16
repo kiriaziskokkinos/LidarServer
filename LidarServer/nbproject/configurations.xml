@@ -9,12 +9,12 @@
       <itemPath>incl/ConnectionManager.h</itemPath>
       <itemPath>incl/LidarConnection.h</itemPath>
       <itemPath>incl/LidarMessage.h</itemPath>
-      <itemPath>Logger.h</itemPath>
+      <itemPath>incl/Logger.h</itemPath>
       <itemPath>incl/Message.h</itemPath>
+      <itemPath>incl/ServerSocket.h</itemPath>
       <itemPath>incl/SimpleMessage.h</itemPath>
-      <itemPath>incl/TcpConnection.h</itemPath>
+      <itemPath>incl/Socket.h</itemPath>
       <itemPath>incl/UIConnection.h</itemPath>
-      <itemPath>incl/UdpConnection.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -30,10 +30,10 @@
       <itemPath>src/LidarMessage.cpp</itemPath>
       <itemPath>src/Logger.cpp</itemPath>
       <itemPath>src/Message.cpp</itemPath>
+      <itemPath>src/ServerSocket.cpp</itemPath>
       <itemPath>src/SimpleMessage.cpp</itemPath>
-      <itemPath>src/TcpConnection.cpp</itemPath>
+      <itemPath>src/Socket.cpp</itemPath>
       <itemPath>src/UIConnection.cpp</itemPath>
-      <itemPath>src/UdpConnection.cpp</itemPath>
       <itemPath>src/main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -67,8 +67,6 @@
           <commandLine>-std=c++14 -pthread</commandLine>
         </ccTool>
       </compileType>
-      <item path="Logger.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="incl/Client.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="incl/Connection.h" ex="false" tool="3" flavor2="0">
@@ -79,15 +77,17 @@
       </item>
       <item path="incl/LidarMessage.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="incl/Logger.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="incl/Message.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="incl/ServerSocket.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="incl/SimpleMessage.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="incl/TcpConnection.h" ex="false" tool="3" flavor2="0">
+      <item path="incl/Socket.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="incl/UIConnection.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="incl/UdpConnection.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Client.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -103,13 +103,13 @@
       </item>
       <item path="src/Message.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/ServerSocket.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/SimpleMessage.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/TcpConnection.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Socket.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/UIConnection.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/UdpConnection.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -134,8 +134,6 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="Logger.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="incl/Client.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="incl/Connection.h" ex="false" tool="3" flavor2="0">
@@ -146,15 +144,17 @@
       </item>
       <item path="incl/LidarMessage.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="incl/Logger.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="incl/Message.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="incl/ServerSocket.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="incl/SimpleMessage.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="incl/TcpConnection.h" ex="false" tool="3" flavor2="0">
+      <item path="incl/Socket.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="incl/UIConnection.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="incl/UdpConnection.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Client.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -170,13 +170,13 @@
       </item>
       <item path="src/Message.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/ServerSocket.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/SimpleMessage.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/TcpConnection.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Socket.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/UIConnection.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/UdpConnection.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
       </item>

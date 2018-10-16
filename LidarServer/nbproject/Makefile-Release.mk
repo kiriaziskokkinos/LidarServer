@@ -42,10 +42,10 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/LidarMessage.o \
 	${OBJECTDIR}/src/Logger.o \
 	${OBJECTDIR}/src/Message.o \
+	${OBJECTDIR}/src/ServerSocket.o \
 	${OBJECTDIR}/src/SimpleMessage.o \
-	${OBJECTDIR}/src/TcpConnection.o \
+	${OBJECTDIR}/src/Socket.o \
 	${OBJECTDIR}/src/UIConnection.o \
-	${OBJECTDIR}/src/UdpConnection.o \
 	${OBJECTDIR}/src/main.o
 
 
@@ -108,25 +108,25 @@ ${OBJECTDIR}/src/Message.o: src/Message.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Message.o src/Message.cpp
 
+${OBJECTDIR}/src/ServerSocket.o: src/ServerSocket.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ServerSocket.o src/ServerSocket.cpp
+
 ${OBJECTDIR}/src/SimpleMessage.o: src/SimpleMessage.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/SimpleMessage.o src/SimpleMessage.cpp
 
-${OBJECTDIR}/src/TcpConnection.o: src/TcpConnection.cpp
+${OBJECTDIR}/src/Socket.o: src/Socket.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TcpConnection.o src/TcpConnection.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Socket.o src/Socket.cpp
 
 ${OBJECTDIR}/src/UIConnection.o: src/UIConnection.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/UIConnection.o src/UIConnection.cpp
-
-${OBJECTDIR}/src/UdpConnection.o: src/UdpConnection.cpp
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/UdpConnection.o src/UdpConnection.cpp
 
 ${OBJECTDIR}/src/main.o: src/main.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
