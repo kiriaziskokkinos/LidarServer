@@ -5,6 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>incl/Client.h</itemPath>
+      <itemPath>incl/ClientSocket.h</itemPath>
       <itemPath>incl/Connection.h</itemPath>
       <itemPath>incl/ConnectionManager.h</itemPath>
       <itemPath>incl/LidarConnection.h</itemPath>
@@ -24,6 +25,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>src/Client.cpp</itemPath>
+      <itemPath>src/ClientSocket.cpp</itemPath>
       <itemPath>src/Connection.cpp</itemPath>
       <itemPath>src/ConnectionManager.cpp</itemPath>
       <itemPath>src/LidarConnection.cpp</itemPath>
@@ -69,6 +71,8 @@
       </compileType>
       <item path="incl/Client.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="incl/ClientSocket.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="incl/Connection.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="incl/ConnectionManager.h" ex="false" tool="3" flavor2="0">
@@ -90,6 +94,8 @@
       <item path="incl/UIConnection.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Client.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ClientSocket.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Connection.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -136,6 +142,8 @@
       </compileType>
       <item path="incl/Client.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="incl/ClientSocket.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="incl/Connection.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="incl/ConnectionManager.h" ex="false" tool="3" flavor2="0">
@@ -157,6 +165,8 @@
       <item path="incl/UIConnection.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Client.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ClientSocket.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Connection.cpp" ex="false" tool="1" flavor2="0">
       </item>

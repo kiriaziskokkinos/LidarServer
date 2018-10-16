@@ -53,8 +53,6 @@ class Socket {
         int socket_descriptor;
         Type socket_type;
         struct sockaddr_in socket_struct;
-        virtual void sendData(std::string data) =0;
-        virtual void receiveData() =0;
         int PORT = 11111;
         void ipInfo();
     public:

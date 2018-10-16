@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/src/Client.o \
+	${OBJECTDIR}/src/ClientSocket.o \
 	${OBJECTDIR}/src/Connection.o \
 	${OBJECTDIR}/src/ConnectionManager.o \
 	${OBJECTDIR}/src/LidarConnection.o \
@@ -77,6 +78,11 @@ ${OBJECTDIR}/src/Client.o: src/Client.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Client.o src/Client.cpp
+
+${OBJECTDIR}/src/ClientSocket.o: src/ClientSocket.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ClientSocket.o src/ClientSocket.cpp
 
 ${OBJECTDIR}/src/Connection.o: src/Connection.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
