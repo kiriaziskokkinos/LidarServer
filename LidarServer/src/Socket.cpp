@@ -13,5 +13,5 @@ Socket::Socket(Socket& o){
 
 Socket::~Socket(){
     close(this->socket_descriptor);
-    Logger::addLog("Socket closed"); //addition code must be inserted here in order to log ip and port of client
+    Logger::addLog("Socket:"+" closed"); //addition code must be inserted here in order to log ip and port of client
 }
