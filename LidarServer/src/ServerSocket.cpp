@@ -20,11 +20,8 @@ ServerSocket::ServerSocket() : Socket() {
 ServerSocket::ServerSocket(const ServerSocket& orig) {
 }
 
-<<<<<<< HEAD
+
 ServerSocket::ServerSocket(int descriptor, Type t) : Socket(descriptor,t) {
-=======
-ServerSocket::ServerSocket(int descriptor, Type t) : Socket(descriptor,t){
->>>>>>> e57d1cc11461e95f69ea555c61ae6174a063cd76
 	
 }
 
