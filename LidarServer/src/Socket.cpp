@@ -23,7 +23,7 @@ Socket::Socket(int descriptor, Type t){
 		}
 	}
 	else if(this->socket_type == Type::UDP){
-		socket_descriptor = socket(AF_INET, SOCK_STREAM, 0);
+		socket_descriptor = socket(AF_INET,SOCK_DGRAM, 0);
 		if (socket_descriptor == -1) { 
 			std::cout<<"Error with socket "<<socket_descriptor;
 		}

@@ -20,7 +20,7 @@ ServerSocket::ServerSocket() : Socket() {
 ServerSocket::ServerSocket(const ServerSocket& orig) {
 }
 
-ServerSocket::ServerSocket(int descriptor, Type t){
+ServerSocket::ServerSocket(int descriptor, Type t) : Socket(descriptor,t){
 	
 }
 
