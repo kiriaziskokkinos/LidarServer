@@ -7,6 +7,7 @@
 /* 
  * File:   ClientSocket.h
  * Author: kiriazis
+ * edit: Ilias
  *
  * Created on October 17, 2018, 12:30 AM
  */
@@ -25,7 +26,7 @@ public:
     void sendData(std::string data);
     std::string receiveData();
 private:
-    int file_discriptor;
+    
 };
 
 #endif /* CLIENTSOCKET_H */

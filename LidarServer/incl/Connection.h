@@ -22,17 +22,18 @@
 class Connection {
     
 public:
-    Connection(){};
+    Connection();
     Connection(int fd);
     Connection(const Connection& orig);
     virtual ~Connection();
-    void singleConnectionThread();
     void sendMessage(std::string s);
 protected:
     std::thread runner;
-    std::vector <Message> MessageList;
+    std::queue <Message> MessageList;
     int descriptor;
-    void receiveMessage(int len);
+    std::string receiveData();
+    void sendData(std::string data);
+    void StartConnection();
 
 };
 
