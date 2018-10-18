@@ -26,6 +26,7 @@ public:
     int acceptt();
     void receiveData();
     void sendData(std::string data);
+    void ipInfo();
 private:
 
 };

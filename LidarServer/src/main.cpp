@@ -23,7 +23,7 @@ int main(int argc, char** argv) {
     ConnectionManager connMan;
     Logger::initLogger();
     Logger::addLog("~~~~~ STARTING SERVER ~~~~~");
-    
+    connMan.acceptConnections();
 
 	
     return 0;

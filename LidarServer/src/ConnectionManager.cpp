@@ -14,29 +14,22 @@
 #include "ConnectionManager.h"
 #include "ServerSocket.h"
 
-ConnectionManager::ConnectionManager() 
-{
-    this->connection.bindd();
-            //object ok 
+ConnectionManager::ConnectionManager(){
     
 }
 
-ConnectionManager::~ConnectionManager()
-{
-	
+ConnectionManager::~ConnectionManager(){
+    this->acceptor.join();
 }
 
 void ConnectionManager::acceptLoop(){
     while (true) {
-        int fd=this->connection.acceptt();
-        
-        
-        
-       // this->connection_list.push_back(std::make_unique(new Connection(0)));
+        int fd = connection.acceptt();
+        connection_list.push_back(std::make_unique<Connection>(fd));
         
     }
 }
 
 void ConnectionManager::acceptConnections(){
-    //this->acceptor = new std::thread();
+    this->acceptor = std::thread(&ConnectionManager::acceptLoop,this);
 }

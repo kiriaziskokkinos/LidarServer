@@ -23,10 +23,10 @@ public:
     ConnectionManager();
     void acceptConnections();
     virtual ~ConnectionManager();
-private:
+protected:
     std::vector<std::unique_ptr<Connection>> connection_list;
     std::thread acceptor;
-    void acceptLoop();
+    void acceptLoop(); 
     ServerSocket connection;
 };
 

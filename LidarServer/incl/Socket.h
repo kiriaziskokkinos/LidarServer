@@ -53,15 +53,16 @@ class Socket {
         int socket_descriptor;
         Type socket_type;
         struct sockaddr_in socket_struct;
-        int PORT = 11111;
-        void ipInfo();
+        int PORT = 0; // GET PORT FROM SYSTEM
+        
     public:
         Socket();
         Socket(int descriptor, Type t);
+        Socket(Type t);
         Socket(Socket& o);
         virtual ~Socket();
         void closed();
-
+        
 };
 
 #endif
