@@ -30,9 +30,9 @@ public:
     void sendMessage(std::string s);
 protected:
     std::thread runner;
-    //std::vector <Message> MessageList;
-    //int descriptor;
-    //void receiveMessage(int len);
+    std::vector <Message> MessageList;
+    int descriptor;
+    void receiveMessage(int len);
 
 };
 

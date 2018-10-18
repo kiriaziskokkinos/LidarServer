@@ -17,21 +17,14 @@
 #include <thread>
 using namespace std;
 
-/*void worker(ConnectionManager& cm){
-	cm->acceptConnectionsLoop();
-}*/
-
 int main(int argc, char** argv) {
 
     
-   // ConnectionManager cm;
+    ConnectionManager connMan;
     Logger::initLogger();
     Logger::addLog("~~~~~ STARTING SERVER ~~~~~");
-    cout<<"Server Start\n";
-	
-	
-	//thread ConnManThread(&worker,&cm);
-	//std::cout<<"Waiting for Connection Manager\n";
+    
+
 	
     return 0;
 }

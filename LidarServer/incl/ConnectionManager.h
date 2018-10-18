@@ -13,23 +13,21 @@
 
 #ifndef CONNECTIONMANAGER_H
 #define CONNECTIONMANAGER_H
-
-#include <vector>
-#include <memory>
-#include <thread>
-
-//#include <string.h>
-#include "Client.h"
+#include "Connection.h"
+#include "ServerSocket.h"
+#include "thread"
 #include "Logger.h"
 
 class ConnectionManager {
 public:
     ConnectionManager();
-    ConnectionManager(const ConnectionManager& orig);
+    void acceptConnections();
     virtual ~ConnectionManager();
 private:
-    std::vector<std::unique_ptr<Connection> > connection_list;
+    std::vector<std::unique_ptr<Connection>> connection_list;
     std::thread acceptor;
+    void acceptLoop();
+    ServerSocket connection;
 };
 
 #endif /* CONNECTIONMANAGER_H */

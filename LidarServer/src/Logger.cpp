@@ -13,61 +13,42 @@
 
 #include "Logger.h"
 
-//static member of class Logger
-// ~~~
 std::mutex Logger::filelock;
 std::fstream Logger::file;
 std::string Logger::file_path ="";
-// ~~~
 
 
-    void Logger::initLogger()
-    {
-        if (Logger::file_path == "")
-        {
-            Logger::file_path="Log.txt";
-            Logger::file.open(file_path,  std::fstream::in | std::fstream::out | std::fstream::app);
-            if (!Logger::file.is_open())
-            {
-                std::perror("File opening failed");
-            }   
-        }
-        else
-        {
-            return;
-        }
+
+void Logger::initLogger() {
+    if (Logger::file_path == "") {
+        Logger::file_path="Log.txt";
+        Logger::file.open(file_path,  std::fstream::in | std::fstream::out | std::fstream::app);
+        if (!Logger::file.is_open()) {
+            std::perror("File opening failed");
+        }   
     }
+}
 
-    void Logger::initLogger(std::string& filename)
-    {
-        if (Logger::file_path == "")
-        {
-            Logger::file_path=filename;
-            Logger::file.open(file_path,  std::fstream::in | std::fstream::out | std::fstream::app);
-            if (!Logger::file.is_open())
-            {
-                std::perror("File opening failed");
-            }   
-        }
-        else
-        {
-            return;
-        }
-    }
+void Logger::initLogger(std::string& filename) {
+    Logger::file_path = filename;
+    Logger::file.open(file_path,  std::fstream::in | std::fstream::out | std::fstream::app);
+    if (!Logger::file.is_open()) {
+        std::perror("File opening failed");
+    }   
+}
 
 void Logger::addLog(std::string log){
     Logger::filelock.lock();
-    //if (Logger::file_path=="") { Logger::initLogger();}
-        time_t result = time(0);
-        char* now;
+    time_t result = time(0);
+    char* now;
 
-        now = ctime(&result);    
-        now[strlen(now)-1] = '\0';     
+    now = ctime(&result);    
+    now[strlen(now)-1] = '\0';     
 #ifdef DEBUG
-        std::cout<<"Debug Message: print time now {"<<now<<"}"
-            <<std::endl;
-#endif        
-        Logger::file << now << " : " << log << std::endl;
-        Logger::file.flush();
+    std::cout<<"Debug Message: print time now {"<<now<<"}"
+    <<std::endl;
+#endif    
+    Logger::file << now << " : " << log << std::endl;
+    Logger::file.flush();
     Logger::filelock.unlock();
 }

@@ -12,21 +12,31 @@
  */
 
 #include "ConnectionManager.h"
-
-
-
+#include "ServerSocket.h"
 
 ConnectionManager::ConnectionManager() 
 {
-	
-}
-
-ConnectionManager::ConnectionManager(const ConnectionManager& orig) 
-{
-	
+    this->connection.bindd();
+            //object ok 
+    
 }
 
 ConnectionManager::~ConnectionManager()
 {
 	
+}
+
+void ConnectionManager::acceptLoop(){
+    while (true) {
+        int fd=this->connection.acceptt();
+        
+        
+        
+       // this->connection_list.push_back(std::make_unique(new Connection(0)));
+        
+    }
+}
+
+void ConnectionManager::acceptConnections(){
+    //this->acceptor = new std::thread();
 }

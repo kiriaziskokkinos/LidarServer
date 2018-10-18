@@ -16,7 +16,7 @@ Socket::Socket(int descriptor, Type t){
      *  We then create our socket descriptor which we will need to manage the socket. 
      */    
     
-	if(this->socket_type== Type::TCP){
+	if(this->socket_type == Type::TCP){
 		socket_descriptor = socket(AF_INET, SOCK_STREAM, 0);
 		if (socket_descriptor == -1) { 
 			std::cout<<"Error with socket "<<socket_descriptor;
