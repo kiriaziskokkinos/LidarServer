@@ -24,7 +24,7 @@ ConnectionManager::~ConnectionManager(){
 
 void ConnectionManager::acceptLoop(){
     while (true) {
-        int fd = connection.acceptt();
+        int fd = connection.acceptsock();
         connection_list.push_back(std::make_unique<Connection>(fd));
         
     }

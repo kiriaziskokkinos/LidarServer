@@ -21,13 +21,14 @@ public:
     ServerSocket(int descriptor, Type t);
     ServerSocket(const ServerSocket& orig);
     virtual ~ServerSocket();
-    void bindd();
-    void listenn();
-    int acceptt();
     void receiveData();
     void sendData(std::string data);
     void ipInfo();
+    int acceptsock();
 private:
+    void bindsock();
+    void listensock();
+    
 
 };
 
