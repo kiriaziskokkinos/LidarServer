@@ -11,6 +11,7 @@
  * Created on September 30, 2018, 6:47 PM
  */
 
+
 #ifndef LIDARCONNECTION_H
 #define LIDARCONNECTION_H
 #include "Connection.h"

@@ -11,6 +11,7 @@
  * Created on September 30, 2018, 6:47 PM
  */
 
+
 #ifndef LIDARMESSAGE_H
 #define LIDARMESSAGE_H
 #include "Message.h"
