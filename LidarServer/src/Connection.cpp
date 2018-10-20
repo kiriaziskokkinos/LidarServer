@@ -23,11 +23,9 @@ Connection::Connection() {
 Connection::Connection(int fd) {
     this->socket = std::make_unique<ClientSocket>(fd);
     
-    this->runner = std::thread(&Connection::StartConnection,this);
+    this->runner = std::thread(&Connection::startIO,this);
     
 }
-
-
 
 Connection::~Connection() {
     std::cout<<"Connection destructor called."<<std::endl;
@@ -35,16 +33,15 @@ Connection::~Connection() {
 	
 }
 
-void Connection::StartConnection(){
+void Connection::startIO(){
     while(true){
         std::string retval = this->socket->receiveData();
-        
-        if (retval == "-1") {
-            std::cout<<"receiveData() returned -1. Did the socket close?"<<std::endl;
-            //delete  this->socket;
+        if (retval == "") {
+            std::cout<<"receiveData() returned null. Did the socket close?"<<std::endl;
+            return;
         } 
         
-        usleep(200);
+        //usleep(200);
     } 
 }
 

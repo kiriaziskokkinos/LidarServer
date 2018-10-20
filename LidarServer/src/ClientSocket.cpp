@@ -22,12 +22,9 @@ ClientSocket::ClientSocket(const ClientSocket& orig) {
     
 }
 ClientSocket::ClientSocket() {
-    //Closes the current client socket
-
     
 }
 ClientSocket::~ClientSocket() {
-    //Closes the current client socket
     this->~Socket();
     
 }
@@ -37,27 +34,26 @@ std::string ClientSocket::receiveData(){
         std::string result;
         // Maybe change it to two part reading a)message size 2)message data
 	int j = read(this->socket_descriptor, messagebuffer,1000);
-	if(j == -1){
-		Logger::addLog("Error while receiving Message");
-		std::cout<<"Error receiving\n";
-		//close(this->socket_descriptor);
+	if(j == -1 || j == 0){
+		Logger::addLog("Error : ClientSocket::receiveData() -> read returned a value less than 1.");
+                result = "";
 	}
-	std::cout<<"Client send: "<<messagebuffer<<std::endl;
-	result = messagebuffer;
-        delete messagebuffer;
+        else {
+            	std::cout<<"Client send: "<<messagebuffer<<std::endl;
+                result = messagebuffer;
+                delete messagebuffer;
+        }
+
 	return result;
 	
 }
 
 void ClientSocket::sendData(std::string data){
-    /*
 	int i = write(this->socket_descriptor,&data,sizeof(data));
 	if(i == -1){
 		std::cout<<"Error sending\n";
 		Logger::addLog("Error while sending message");
-                // remove before flight
 		close(this->socket_descriptor);
 	}
-    */
 }
 

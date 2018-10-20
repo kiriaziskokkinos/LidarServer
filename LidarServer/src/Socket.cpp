@@ -6,15 +6,15 @@ Socket::Socket(int descriptor, Type t){
     this->socket_type= t;
 	
 	/*  
-     *  Here we initialize the tcp socket struct as we need it for the initial communitation with the clients. 
-     */
+        *  Here we initialize the tcp socket struct as we need it for the initial communitation with the clients. 
+        */
 	socket_struct.sin_addr.s_addr = htons(INADDR_ANY);
 	socket_struct.sin_family = AF_INET;
 	socket_struct.sin_port = htons(PORT);
         
-    /*
-     *  We then create our socket descriptor which we will need to manage the socket. 
-     */    
+        /*
+        *  We then create our socket descriptor which we will need to manage the socket. 
+        */    
     
 	if(this->socket_type == Type::TCP){
 		socket_descriptor = socket(AF_INET, SOCK_STREAM, 0);
@@ -36,15 +36,15 @@ Socket::Socket(Type t){
     this->socket_type= t;
 	
 	/*  
-     *  Here we initialize the tcp socket struct as we need it for the initial communitation with the clients. 
-     */
+        *  Here we initialize the tcp socket struct as we need it for the initial communitation with the clients. 
+        */
 	socket_struct.sin_addr.s_addr = htons(INADDR_ANY);
 	socket_struct.sin_family = AF_INET;
 	socket_struct.sin_port = htons(PORT);
         
-    /*
-     *  We then create our socket descriptor which we will need to manage the socket. 
-     */    
+        /*
+        *  We then create our socket descriptor which we will need to manage the socket. 
+        */    
     
 	if(this->socket_type == Type::TCP){
 		socket_descriptor = socket(AF_INET, SOCK_STREAM, 0);
@@ -78,7 +78,7 @@ Socket::~Socket(){
 
 
 void Socket::closed(){
-	close(this->socket_descriptor);
+    close(this->socket_descriptor);
 }
 
 

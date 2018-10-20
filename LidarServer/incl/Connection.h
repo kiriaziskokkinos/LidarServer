@@ -25,11 +25,12 @@ public:
     Connection();
     Connection(int fd);
     ~Connection();
-protected:
     std::thread runner;
+protected:
+    
     std::queue <Message> MessageList;
     std::unique_ptr<ClientSocket> socket;
-    void StartConnection();
+    void startIO();
 
 };
 

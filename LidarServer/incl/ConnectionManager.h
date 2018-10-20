@@ -25,8 +25,9 @@ public:
     ~ConnectionManager();
 protected:
     std::vector<Connection*> connection_list;
-    std::thread acceptor;
-    void acceptLoop(); 
+    std::thread acceptor,zombieTerminator;
+    void acceptLoop();
+    void zombieHunt();
     ServerSocket connection;
 };
 

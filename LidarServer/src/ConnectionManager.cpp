@@ -32,6 +32,19 @@ void ConnectionManager::acceptLoop(){
     }
 }
 
+void ConnectionManager::zombieHunt(){
+    while (true){
+        
+        for ( auto i = this->connection_list.begin(); i != this->connection_list.end(); i++ ) {
+            if ((*i)->runner.joinable())
+                this->connection_list.erase(i);
+        }
+        
+    }
+}
 void ConnectionManager::acceptConnections(){
+    
+    
+    this->zombieTerminator = std::thread();
     this->acceptor = std::thread(&ConnectionManager::acceptLoop,this);
 }
