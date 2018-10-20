@@ -23,10 +23,12 @@ ConnectionManager::~ConnectionManager(){
 }
 
 void ConnectionManager::acceptLoop(){
+    int fd;
     while (true) {
-        int fd = connection.acceptsock();
-        connection_list.push_back(std::make_unique<Connection>(fd));
-        
+        fd = connection.acceptsock();
+        std::cout<< "New client connected" <<std::endl;
+        auto r = new Connection(fd);
+        connection_list.push_back(r);
     }
 }
 

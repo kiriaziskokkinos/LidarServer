@@ -17,22 +17,18 @@
 #include <thread>
 
 #include "SimpleMessage.h"
-#include "Socket.h"
+#include "ClientSocket.h"
 
 class Connection {
     
 public:
     Connection();
     Connection(int fd);
-    Connection(const Connection& orig);
-    virtual ~Connection();
-    void sendMessage(std::string s);
+    ~Connection();
 protected:
     std::thread runner;
     std::queue <Message> MessageList;
-    int descriptor;
-    std::string receiveData();
-    void sendData(std::string data);
+    std::unique_ptr<ClientSocket> socket;
     void StartConnection();
 
 };

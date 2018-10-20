@@ -22,9 +22,9 @@ class ConnectionManager {
 public:
     ConnectionManager();
     void acceptConnections();
-    virtual ~ConnectionManager();
+    ~ConnectionManager();
 protected:
-    std::vector<std::unique_ptr<Connection>> connection_list;
+    std::vector<Connection*> connection_list;
     std::thread acceptor;
     void acceptLoop(); 
     ServerSocket connection;

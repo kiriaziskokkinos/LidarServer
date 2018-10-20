@@ -20,6 +20,7 @@
 
 class ClientSocket : public Socket{
 public:
+    ClientSocket();
     ClientSocket(int fd);
     ClientSocket(const ClientSocket& orig);
     virtual ~ClientSocket();
