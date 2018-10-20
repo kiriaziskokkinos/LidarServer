@@ -11,7 +11,6 @@
  * Created on October 5, 2018, 9:32 PM
  */
 
-
 #include "Client.h"
 
 Client::Client(int descriptor_tcp) {

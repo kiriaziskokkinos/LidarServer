@@ -13,7 +13,6 @@
 
 #include "Logger.h"
 
-
 std::mutex Logger::filelock;
 std::fstream Logger::file;
 std::string Logger::file_path ="";

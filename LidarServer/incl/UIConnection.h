@@ -11,7 +11,6 @@
  * Created on September 30, 2018, 6:47 PM
  */
 
-
 #ifndef UICONNECTION_H
 #define UICONNECTION_H
 #include "Connection.h"

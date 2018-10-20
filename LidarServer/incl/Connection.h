@@ -11,7 +11,6 @@
  * Created on September 30, 2018, 6:45 PM
  */
 
-
 #ifndef CONNECTION_H
 #define CONNECTION_H
 

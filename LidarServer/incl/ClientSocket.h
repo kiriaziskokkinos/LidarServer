@@ -11,7 +11,7 @@
  *
  * Created on October 17, 2018, 12:30 AM
  */
- 
+
 #ifndef CLIENTSOCKET_H
 #define CLIENTSOCKET_H
 #include <string>

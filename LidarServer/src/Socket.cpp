@@ -1,7 +1,6 @@
 
 #include "Socket.h"
 
-
 Socket::Socket(int descriptor, Type t){
     this->socket_descriptor= descriptor;
     this->socket_type= t;

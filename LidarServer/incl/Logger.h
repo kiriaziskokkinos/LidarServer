@@ -11,7 +11,6 @@
  * Created on September 30, 2018, 6:46 PM
  */
 
-
 #ifndef LOGGER_H
 #define LOGGER_H
 #include <string>

@@ -13,10 +13,11 @@
             <file>file:/home/kiriazis/NetBeansProjects/LidarServer/LidarServer/incl/ClientSocket.h</file>
             <file>file:/home/kiriazis/NetBeansProjects/LidarServer/LidarServer/src/main.cpp</file>
             <file>file:/home/kiriazis/NetBeansProjects/LidarServer/LidarServer/incl/Connection.h</file>
+            <file>file:/home/kiriazis/NetBeansProjects/LidarServer/LidarServer/src/ServerSocket.cpp</file>
             <file>file:/home/kiriazis/NetBeansProjects/LidarServer/LidarServer/src/Connection.cpp</file>
+            <file>file:/home/kiriazis/NetBeansProjects/LidarServer/LidarServer/incl/ServerSocket.h</file>
             <file>file:/home/kiriazis/NetBeansProjects/LidarServer/LidarServer/incl/Socket.h</file>
             <file>file:/home/kiriazis/NetBeansProjects/LidarServer/LidarServer/src/ConnectionManager.cpp</file>
-            <file>file:/home/kiriazis/NetBeansProjects/LidarServer/LidarServer/src/Logger.cpp</file>
         </group>
     </open-files>
 </project-private>

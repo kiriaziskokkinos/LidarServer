@@ -19,7 +19,6 @@ Connection::Connection() {
     this->descriptor = 0;   
 }
 
-
 Connection::Connection(int fd) {
     this->descriptor= fd;
     

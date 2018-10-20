@@ -11,7 +11,6 @@
  * Created on September 30, 2018, 6:47 PM
  */
 
-
 #ifndef SIMPLEMESSAGE_H
 #define SIMPLEMESSAGE_H
 #include "Message.h"

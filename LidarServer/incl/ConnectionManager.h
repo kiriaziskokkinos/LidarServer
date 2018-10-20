@@ -11,7 +11,6 @@
  * Created on September 30, 2018, 6:46 PM
  */
 
-
 #ifndef CONNECTIONMANAGER_H
 #define CONNECTIONMANAGER_H
 #include "Connection.h"

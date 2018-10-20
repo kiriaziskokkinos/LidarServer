@@ -11,7 +11,6 @@
  * Created on September 30, 2018, 6:47 PM
  */
 
-
 #ifndef MESSAGE_H
 #define MESSAGE_H
 #include <iostream>
