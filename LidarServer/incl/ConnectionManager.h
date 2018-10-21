@@ -21,7 +21,7 @@
 class ConnectionManager {
 public:
     ConnectionManager();
-    void acceptConnections();
+    void start();
     ~ConnectionManager();
 protected:
     std::vector<Connection*> connection_list;

@@ -68,8 +68,10 @@ void ServerSocket::ipInfo()
 {
     struct sockaddr_in sin;
     socklen_t len = sizeof(sin);
-    if (getsockname(this->socket_descriptor, (struct sockaddr *)&sin, &len) == -1)
+	int ret= getsockname(this->socket_descriptor, (struct sockaddr *)&sin, &len);
+    if ( ret == -1){
         perror("getsockname");
+	}
 	struct ifaddrs *ifaddr, *ifa;
 	int family, s, n;
 	char host[NI_MAXHOST];

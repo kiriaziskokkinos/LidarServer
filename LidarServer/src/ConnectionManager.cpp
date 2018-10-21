@@ -32,6 +32,6 @@ void ConnectionManager::acceptLoop(){
     }
 }
 
-void ConnectionManager::acceptConnections(){
+void ConnectionManager::start(){
     this->acceptor = std::thread(&ConnectionManager::acceptLoop,this);
 }
